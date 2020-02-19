@@ -1,0 +1,134 @@
+﻿#textBox {
+    height: 30vh;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 60%;
+    margin-top: 50px;  
+    background-color: white;
+}
+
+input {
+    height: 100%;
+    width: 100%;
+    resize: none;
+}
+
+.postSummaryClick {
+    /*information should only show once summary button has been clicked.*/
+    display: none;
+}
+
+.rightFloater {
+    float:right;
+}
+/*#topPageBar {
+    text-align: center;
+    font-family: sans-serif;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:transparent;
+    margin-top: 0px;
+}
+*/
+
+input.postSummaryClick {
+    height: initial;
+}
+
+<<<<<<< HEAD
+#results{
+    display: none;
+}
+
+#directionsForSummarization {
+    display: block;
+=======
+#directionsForSummarization {
+    display: block;
+>>>>>>> 35484a64c5c139fb22ae0e932af3c21b08470fc4
+}
+
+#spacer {
+    height: 27.5%;
+}
+
+#toolbar {
+    /*margin-top: 10vh;*/
+    
+}
+
+#editor {
+    height: 60vh;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+#editorBox {
+    height: 100%;
+    min-height: 100%;
+    overflow-y: auto;
+}
+
+#readingLevelBtn {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 175px;
+    padding: 3px;
+    float: left;
+    font-size: 10pt;
+    background-color: 0,122,155;
+    border: 1px solid black;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+#readingLevelContainer {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 10pt;
+    clear: right;
+    width: 190px;
+    margin-right: 10%;
+    opacity: 1;
+}
+
+#readingLevel {
+    float: left;
+    text-align: center;
+    margin-top: 10px;
+    padding: 3px;
+    margin-left: 14px;
+    margin-bottom: 10px;
+    width: 175px;
+}
+
+#spellCheckBtn {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 175px;
+    padding: 3px;
+    float: left;
+    font-size: 10pt;
+    background-color: 0,122,155;
+    border: 1px solid black;
+}
+
+#summaryButton {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 175px;
+    padding: 3px;
+    float: left;
+    font-size: 10pt;
+    background-color: 0,122,155;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}

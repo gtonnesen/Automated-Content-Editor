@@ -1,0 +1,139 @@
+﻿﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Content Editor</title>
+
+    <!-- Theme included stylesheets -->
+    <link href="https://cdn.quilljs.com/1.1.3/quill.snow.css" rel="stylesheet">
+    <link href="https://cdn.quilljs.com/1.1.3/quill.bubble.css" rel="stylesheet">
+    <link href="index.css" type="text/css" rel="stylesheet" />
+    <!-- Bootstrap core CSS -->
+    <link href="startbootstrap-landing-page-gh-pages/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="startbootstrap-landing-page-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="startbootstrap-landing-page-gh-pages/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="startbootstrap-landing-page-gh-pages/css/landing-page.min.css" rel="stylesheet">
+</head>
+<!--<body onload="getSubscriptionKey();">-->
+<body>
+
+    <!-- Masthead -->
+    <header class="masthead text-white text-center">
+        <div class="overlay">
+
+            <!--This div is meant to act as a spacer to bring the following div further down.-->
+            <div id="spacer" class="col-12 col-md-3 rightFloater">
+
+            </div>
+            <div id="readingLevelContainer" class="col-12 col-md-3 rightFloater">
+                <button id="readingLevelBtn" class="btn btn-block btn-lg btn-primary" onclick="calculateGradeLevel('readingLevel')" type="button">
+                    Check Reading Level
+                </button>
+                <!--Where Results of Reading Level should appear.-->
+                <div id="readingLevel">
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <h1 class="mb-5">Place text in textbox below to edit content!</h1>
+                </div>
+                <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                    <form>
+                        <!--Row containing Text Editor-->
+                        <div class="form-row">
+                            <div class="col-12 col-md-12 mb-2 mb-md-0">
+                                <div id="editorBox">
+                                    <div id="toolbar"></div>
+                                    <div id="editor"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Button for Spell Check-->
+                        <div class="form-row">
+                            <div class="col-12 col-md-4">
+                                <button id="spellCheckBtn" class="btn btn-block btn-lg btn-primary" type=button onclick="return bingSpellCheck(getSubscriptionKey())">
+                                    Spell Check
+                                </button>
+                            </div>
+<<<<<<< HEAD
+                            <!--Results from Spell Check-->
+                            <div class="col-12 col-md-9 mb-2 mb-md-0">
+                                <div id="results">
+                                    <h4>Results of SpellChecker</h4>
+                                    <p id="resultsOfWrong">Mispelled Words: </p>
+                                    <p id="resultsOfRight">Possible Corrections: </p>
+                                </div>
+                            </div>
+=======
+>>>>>>> 35484a64c5c139fb22ae0e932af3c21b08470fc4
+                        </div>
+                        <!--Row for the Summarization-->
+                        <div class="form-row">
+                            <div class="col-12 col-md-3">
+                                <button id="summaryButton" onclick="summarizeClicked()" type="button" class="btn btn-block btn-lg btn-primary">
+                                    Summarize Text
+                                </button>
+
+                                <!--Recieve Google Doc Link to summarize-->
+                                <input type="text" class="postSummaryClick" id="linkToDoc" placeholder="Google Doc Link"/>
+
+                                <!--Recieve the number of character's or percentage to bring summarizer to.-->
+                                <input type="number" class="postSummaryClick" id="characterLength" placeholder="Text Length"/>
+
+                                <button id="getSummary" class="postSummaryClick" onclick="summarySubmit()" type="button" >
+                                    Submit
+                                </button>
+
+                                <button id="twitterSummarize" onclick="summarySubmit()" value="280" class="postSummaryClick" type="button">
+                                    Twitter Format
+                                </button>
+                            </div>
+                            <!--This row will be an attempt to show the results of spellchecker-->
+                            <div class="col-12 col-md-9 mb-2 mb-md-0">
+                                <p id="directionsForSummarization">
+                                    You MUST have a public Google Document with information to summarize.<br /> <br /> <br />
+                                    The following are a list of steps to achieve this: <br /><br />
+                                    1. Open the text document, presentation, spreadsheet or drawing that you want to share with the public. <br />
+                                    2. Click the “Share” button at the top right corner of the screen (under your email address) to open the Sharing Settings dialog box. <br />
+                                    3. Click "Change…" in the "Who Has Access" section to open the "Sharing Settings Visibility Options" area. <br />
+                                    4. Select “Public On The Web” and then click the field next to “Access: Anyone (No Sign-In Required).” Select the level of accessibility you are giving to the public from the pop-up menu: “Can Edit,” “Can Comment” or “Can View.” <br />
+                                    5. Click “Save” to return to the general Sharing Settings dialog box, and then click “Done” to close the Sharing Settings box.
+                                </p>
+
+                                <div id="resultsFromSummarization">
+
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--DO NOT FORGET THIS SCRIPT TAG SO YOU CAN USE JQUERY!!!!!-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--Quill Scripts-->
+    <script src="https://cdn.quilljs.com/1.1.3/quill.js"></script>
+    <script src="https://cdn.quilljs.com/1.1.3/quill.min.js"></script>
+    <!--Some other JQuery Libraries-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!--Our Own JavaScript-->
+    <script src="index.js"></script>
+    <script src="RecognantAPI.js"></script>
+    <script src="spellCheck.js"></script>
+</body>
+</html >
